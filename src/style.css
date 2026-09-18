@@ -1,0 +1,150 @@
+/* Si tienes licencia de embedding de Coolvetica, apunta aquí y
+   úsala en --font-display en lugar de Space Grotesk */
+/*
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('/fonts/coolvetica-rg.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
+:root {
+  --plum-deep: #3E1F45;
+  --plum: #8A4B9E;
+  --magenta-glow: #E88FB8;
+  --peach-glow: #F2A97E;
+  --cream: #FBF6F1;
+  --white: #FFFFFF;
+
+  /* más delgada que Archivo Black; cambia a "Coolvetica" si la embebes */
+  --font-display: "Coolvetica", "Space Grotesk", "Inter", sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--cream);
+  color: var(--plum-deep);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--plum); outline-offset: 3px; }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.35rem;
+  color: var(--plum-deep);
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.65rem 1.3rem;
+  border-radius: 999px;
+  border: 1px solid var(--plum);
+  color: var(--plum-deep);
+}
+
+.btn-primary {
+  background: var(--plum);
+  border-color: var(--plum);
+  color: var(--white);
+}
+
+.hero {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 3rem;
+  text-align: center;
+}
+
+.kicker {
+  color: var(--plum);
+  font-size: 0.95rem;
+  margin: 0 0 0.75rem;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.15;
+  margin: 0 0 1.1rem;
+  font-size: clamp(2.1rem, 5vw, 2.9rem);
+  color: var(--plum-deep);
+}
+
+.lede {
+  font-size: 1.05rem;
+  margin: 0 0 2rem;
+  color: #6E5478;
+}
+
+.cards {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(138, 75, 158, 0.15);
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: 0 10px 24px rgba(62, 31, 69, 0.1);
+  isolation: isolate;
+}
+
+
+
+.card h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  margin: 0 0 0.5rem;
+  color: var(--plum-deep);
+  font-size: 1.1rem;
+}
+
+.card p {
+  margin: 0;
+  color: #6E5478;
+  font-size: 0.95rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  color: #9A82A4;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 720px) {
+  .cards { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .footer { flex-direction: column; gap: 0.35rem; text-align: center; }
+}
